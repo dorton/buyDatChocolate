@@ -101,7 +101,9 @@ section.pricing {
   section {
     padding: 75px 0; }
   section.first {
-    padding-top: 75px; } }
+    padding-top: 75px; }
+  #full-logo {
+    width: 300px;} }   /* added mobile responsive logo in masthead */
 
 .scroll-top {
   position: fixed;
@@ -180,8 +182,16 @@ section.pricing {
     #mainNav.navbar-shrink .navbar-brand {
       font-size: 1.5em; } }
 
+@media (max-width: 515px) {   /* added flex navbar under 515px */
+  .m-flex {
+    display: flex;
+    flex-direction: column; }
+  #m-flex {
+    padding-top: 150px; } }
+
 header.masthead {
-  padding-top: 100px;
+  height: 400px;
+  padding-top: 120px;
   padding-bottom: 50px;
   text-align: center;
   color: white;
@@ -202,12 +212,21 @@ header.masthead {
 
 @media (min-width: 768px) {
   header.masthead {
-    padding-top: 200px;
-    padding-bottom: 100px; }
+    padding-top: 175px;
+    padding-bottom: 100px;
+    height: 900px; }
     header.masthead .intro-text .name {
       font-size: 4.5em; }
     header.masthead .intro-text .skills {
       font-size: 1.75em; } }
+
+@media (min-width: 991px) {
+  header.masthead {
+    height: 700px; } }
+
+@media (max-width: 400px) {
+  header.masthead {
+    height: 525px; } }
 
 #portfolio .portfolio-item {
   right: 0;
@@ -509,6 +528,27 @@ footer {
   font-size: 3rem;
   margin-top: -5px;
 }
+
+#name-one {     /*added masthead animations*/
+  animation: 1s ease 0s normal forwards 1 fadein1;
+}
+
+#name-two {
+  animation: 2s ease 0s normal forwards 1 fadein2;
+}
+
+@keyframes fadein1 {
+  0% { margin-top: -10%; opacity:0; }
+  100% { margin-top: 0%; opacity:1; }
+}
+
+@keyframes fadein2 {
+    0% { margin-top: -10%; opacity:0; }
+    66% { margin-top: -10%; opacity:0; }
+    100% { margin-top: 0%; opacity:1; }
+}
+
+
 .price {
   margin-top: 7px;
   font-weight: bold;
