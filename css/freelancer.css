@@ -101,7 +101,9 @@ section.pricing {
   section {
     padding: 75px 0; }
   section.first {
-    padding-top: 75px; } }
+    padding-top: 75px; }
+  #full-logo {
+    width: 300px;} }   /* added mobile responsive logo in masthead */
 
 .scroll-top {
   position: fixed;
@@ -125,14 +127,16 @@ section.pricing {
   font-weight: 700;
   text-transform: uppercase;
   border: none;
-  background: #2C3E50; }
+  background: #FFF;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);}   /*changed white nav color*/
   #mainNav a:focus {
     outline: none; }
   #mainNav .navbar-brand {
-    font-size: 1.1rem;
-    color: white; }
+    font-size: 1.5rem;
+    font-family: 'Squada One', cursive;
+    color: #060708; }    /*changed nav text color*/
     #mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-      color: white; }
+      color: #060708; }
   #mainNav .navbar-nav {
     letter-spacing: 1px; }
     #mainNav .navbar-nav li.nav-item a.nav-link {
@@ -155,13 +159,13 @@ section.pricing {
 
 @media (min-width: 992px) {
   #mainNav {
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
     -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
     transition: padding-top 0.3s, padding-bottom 0.3s; }
     #mainNav .navbar-brand {
-      font-size: 2em;
+      font-size: 2.5em;
       -webkit-transition: all 0.3s;
       -moz-transition: all 0.3s;
       transition: all 0.3s; }
@@ -178,12 +182,21 @@ section.pricing {
     #mainNav.navbar-shrink .navbar-brand {
       font-size: 1.5em; } }
 
+@media (max-width: 515px) {   /* added flex navbar under 515px */
+  .m-flex {
+    display: flex;
+    flex-direction: column; }
+  #m-flex {
+    padding-top: 150px; } }
+
 header.masthead {
-  padding-top: 100px;
+  height: 400px;
+  padding-top: 120px;
   padding-bottom: 50px;
   text-align: center;
   color: white;
-  background: #18BC9C; }
+  background: url('./../img/chocolate_pile.png') no-repeat center center fixed ;  /* Added masthead background */
+  background-size: cover;}
   header.masthead img {
     display: block;
     margin: 0 auto 20px; }
@@ -192,19 +205,28 @@ header.masthead {
     font-size: 2em;
     font-weight: 700;
     display: block;
-    text-transform: uppercase; }
+    text-transform: uppercase;}
   header.masthead .intro-text .skills {
     font-size: 1.25em;
     font-weight: 300; }
 
 @media (min-width: 768px) {
   header.masthead {
-    padding-top: 200px;
-    padding-bottom: 100px; }
+    padding-top: 175px;
+    padding-bottom: 100px;
+    height: 900px; }
     header.masthead .intro-text .name {
-      font-size: 4.75em; }
+      font-size: 4.5em; }
     header.masthead .intro-text .skills {
       font-size: 1.75em; } }
+
+@media (min-width: 991px) {
+  header.masthead {
+    height: 700px; } }
+
+@media (max-width: 400px) {
+  header.masthead {
+    height: 525px; } }
 
 #portfolio .portfolio-item {
   right: 0;
@@ -500,11 +522,33 @@ footer {
   transition: margin-top 0.3s linear;
 }
 .name {
-  color: #565656;
+  color: #FFF;   /*changed masthead text color*/
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.9); /*added text shadow*/
   font-weight: 300;
   font-size: 3rem;
   margin-top: -5px;
 }
+
+#name-one {     /*added masthead animations*/
+  animation: 1s ease 0s normal forwards 1 fadein1;
+}
+
+#name-two {
+  animation: 2s ease 0s normal forwards 1 fadein2;
+}
+
+@keyframes fadein1 {
+  0% { margin-top: -10%; opacity:0; }
+  100% { margin-top: 0%; opacity:1; }
+}
+
+@keyframes fadein2 {
+    0% { margin-top: -10%; opacity:0; }
+    66% { margin-top: -10%; opacity:0; }
+    100% { margin-top: 0%; opacity:1; }
+}
+
+
 .price {
   margin-top: 7px;
   font-weight: bold;
@@ -713,4 +757,11 @@ li::before {
 }
 #payment-icon h5 a {
   color: white;
+}
+
+
+/*new styles*/
+
+.logo {
+  padding: 0 20px;
 }
